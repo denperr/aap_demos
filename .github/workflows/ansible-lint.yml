@@ -1,7 +1,7 @@
 # .github/workflows/ansible-lint.yml
 name: ansible-lint
 "on":
-  push: # yamllint disable-line rule:truthy
+  push:
     branches: ["main"]
   pull_request:
     branches: ["main", "stable", "release/v*"]
