@@ -1,0 +1,14 @@
+# .github/workflows/ansible-lint.yml
+name: ansible-lint
+"on":
+  push: # yamllint disable-line rule:truthy
+    branches: ["main"]
+  pull_request:
+    branches: ["main", "stable", "release/v*"]
+jobs:
+  build:
+    name: Ansible Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run ansible-lint
+        uses: ansible/ansible-lint@main
