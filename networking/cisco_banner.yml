@@ -8,16 +8,13 @@
       cisco.ios.ios_banner:
         banner: login
         state: present
-        text: |
-          This is my login banner
-          that contains a multiline
-          string managed by Ansible.
+        text: "{{ network_banner }}"
 
     - name: Configure the MOTD
       cisco.ios.ios_banner:
         banner: login
         state: present
         text: |
-          this is my MOTD banner
+          This is my MOTD banner
           that contains a multiline
           string managed by Ansible.
