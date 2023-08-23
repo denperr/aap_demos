@@ -1,0 +1,23 @@
+---
+
+- name: Change the Cisco banners
+  hosts: cisco
+  gather_facts: false
+  tasks:
+    - name: Configure the login banner
+      cisco.ios.ios_banner:
+        banner: login
+        state: present
+        text: |
+          This is my login banner
+          that contains a multiline
+          string managed by Ansible.
+
+    - name: Configure the MOTD
+      cisco.ios.ios_banner:
+        banner: login
+        state: present
+        text: |
+          this is my MOTD banner
+          that contains a multiline
+          string managed by Ansible.
